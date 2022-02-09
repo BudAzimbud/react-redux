@@ -8,6 +8,7 @@ const columns = [
   {
     dataField: "id",
     text: "ID",
+    sort: true,
     headerStyle: () => {
       return { width: "5%" };
     },
@@ -15,10 +16,12 @@ const columns = [
   {
     dataField: "nama",
     text: "Name",
+    sort : true
   },
   {
     dataField: "alamat",
     text: "Alamat",
+    sort : true
   },
   {
     dataField: "link",
@@ -42,6 +45,8 @@ const columns = [
     },
   },
 ];
+
+
 
 const TableComponents = (props) => {
   return (

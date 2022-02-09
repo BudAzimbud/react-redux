@@ -40,7 +40,6 @@ export default class App extends React.Component {
             <Route exact path='/create' element={< CreateUserContainer />}></Route>
             <Route exact path='/detail/:id' element={< DetailUserComponent />}></Route>
             <Route exact path='/edit/:id' element={< EditUserContainer />}></Route>
-
           </Routes>
         </div>
       </Router>

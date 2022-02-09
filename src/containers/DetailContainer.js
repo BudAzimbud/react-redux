@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 
 class DetailUserComponent extends Component {
-
     render() {
+
+        console.log(this.props)
         return (
             <div>
-               <Container>
-                   
-               </Container>
+                <Container>
+                    detail
+                </Container>
             </div>
         );
     }

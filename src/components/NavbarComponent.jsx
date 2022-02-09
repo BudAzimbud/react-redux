@@ -47,7 +47,7 @@ export default class NavbarComponent extends React.Component {
                   Contact
                 </DropdownToggle>
 
-                <DropdownMenu center>
+                <DropdownMenu>
                   <DropdownItem>Email</DropdownItem>
                   <DropdownItem>Github</DropdownItem>
                   <DropdownItem divider />

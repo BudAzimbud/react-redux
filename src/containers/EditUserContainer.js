@@ -6,9 +6,9 @@ class EditUserContainer extends Component {
     render() {
         return (
             <div>
-              <Container>
-                  
-              </Container>
+                <Container>
+
+                </Container>
             </div>
         );
     }

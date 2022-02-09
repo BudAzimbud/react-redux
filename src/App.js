@@ -11,20 +11,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [
-        {
-          id: 1,
-          nama: 'azim',
-          alamat: 'bandung',
 
-        },
-        {
-          id: 2,
-          nama: 'aa',
-          alamat: 'sumedang',
-
-        }
-      ]
     }
   }
 
@@ -36,7 +23,7 @@ export default class App extends React.Component {
           <NavbarComponent />
           <JumbrotonComponent />
           <Routes>
-            <Route exact path='/' element={< HomeContainer users={this.state.users} />}></Route>
+            <Route exact path='/' element={< HomeContainer  />}></Route>
             <Route exact path='/create' element={< CreateUserContainer />}></Route>
             <Route exact path='/detail/:id' element={< DetailUserComponent />}></Route>
             <Route exact path='/edit/:id' element={< EditUserContainer />}></Route>

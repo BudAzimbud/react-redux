@@ -9,7 +9,10 @@ import ToolkitProvider, {
   Search,
 } from "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit";
 import paginationFactory from "react-bootstrap-table2-paginator";
+import { connect } from "react-redux";
+
 const { SearchBar } = Search;
+
 const columns = [
   {
     dataField: "id",
@@ -56,6 +59,12 @@ const columns = [
   },
 ];
 
+const mapStateToProps = (state) => {
+  return {
+    users: state.users.users,
+  };
+};
+
 function TableSearchComponents(props) {
   return (
     <Container>
@@ -92,4 +101,4 @@ function TableSearchComponents(props) {
   );
 }
 
-export default TableSearchComponents;
+export default connect(mapStateToProps, null)(TableSearchComponents);

@@ -1,7 +1,7 @@
 import React from "react";
 // import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import BootstrapTable from "react-bootstrap-table-next";
-import { Container, Button } from "reactstrap";
+import { Container, Button, ButtonDropdown, Row, Col } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -67,8 +67,19 @@ function TableSearchComponents(props) {
       >
         {(props) => (
           <div>
-            <h3>Input something at below input field:</h3>
-            <SearchBar {...props.searchProps} />
+            <Row>
+              <Col>
+                <Link to={"create/"}>
+                  <Button color="dark" className="mr-3">
+                    <FontAwesomeIcon /> Add
+                  </Button>
+                </Link>
+              </Col>
+              <Col>
+                <SearchBar {...props.searchProps} />
+              </Col>
+            </Row>
+
             <hr />
             <BootstrapTable
               {...props.baseProps}

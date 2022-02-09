@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { Container } from 'reactstrap';
 
 class EditUserContainer extends Component {
 
     render() {
         return (
             <div>
-                <h1>edit user</h1>
+              <Container>
+                  
+              </Container>
             </div>
         );
     }

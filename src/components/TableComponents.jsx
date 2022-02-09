@@ -3,7 +3,7 @@ import BootstrapTable from "react-bootstrap-table-next";
 import { Container, Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "react-router-dom";
 const columns = [
   {
     dataField: "id",
@@ -16,12 +16,12 @@ const columns = [
   {
     dataField: "nama",
     text: "Name",
-    sort : true
+    sort: true,
   },
   {
     dataField: "alamat",
     text: "Alamat",
-    sort : true
+    sort: true,
   },
   {
     dataField: "link",
@@ -29,13 +29,17 @@ const columns = [
     formatter: (rowContent, row) => {
       return (
         <div>
-          <Button color="dark" className="mr-2">
-            <FontAwesomeIcon icon={faInfo} /> Detail
-          </Button>
+          <Link to={"detail/" + row.id}>
+            <Button color="dark" className="mr-2">
+              <FontAwesomeIcon icon={faInfo} /> Detail
+            </Button>
+          </Link>
 
-          <Button color="dark" className="mr-2">
-            <FontAwesomeIcon icon={faEdit} /> Edit
-          </Button>
+          <Link to={"edit/" + row.id}>
+            <Button color="dark" className="mr-2">
+              <FontAwesomeIcon icon={faEdit} /> Edit
+            </Button>
+          </Link>
 
           <Button color="dark" className="mr-2">
             <FontAwesomeIcon icon={faTrash} /> Delete
@@ -46,12 +50,22 @@ const columns = [
   },
 ];
 
-
+const defaultSorted = [
+  {
+    dataField: "id",
+    order: "asc",
+  },
+];
 
 const TableComponents = (props) => {
   return (
     <Container>
-      <BootstrapTable keyField="id" data={props.users} columns={columns} />
+      <BootstrapTable
+        keyField="id"
+        data={props.users}
+        columns={columns}
+        defaultSorted={defaultSorted}
+      />
     </Container>
   );
 };

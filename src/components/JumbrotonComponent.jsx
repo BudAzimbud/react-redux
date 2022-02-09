@@ -3,7 +3,7 @@ import { Button, Container } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
 
-const Example = (props) => {
+const JumbrotonComponent = (props) => {
   return (
     <Container>
       <div>
@@ -30,4 +30,4 @@ const Example = (props) => {
   );
 };
 
-export default Example;
+export default JumbrotonComponent;

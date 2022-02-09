@@ -68,35 +68,37 @@ const mapStateToProps = (state) => {
 function TableSearchComponents(props) {
   return (
     <Container>
-      <ToolkitProvider
-        keyField="id"
-        data={props.users}
-        columns={columns}
-        search
-      >
-        {(props) => (
-          <div>
-            <Row>
-              <Col>
-                <Link to={"create/"}>
-                  <Button color="dark" className="mr-3">
-                    <FontAwesomeIcon /> Add
-                  </Button>
-                </Link>
-              </Col>
-              <Col>
-                <SearchBar {...props.searchProps} />
-              </Col>
-            </Row>
+      {props.users ? (
+        <ToolkitProvider
+          keyField="id"
+          data={props.users}
+          columns={columns}
+          search
+        >
+          {(props) => (
+            <div>
+              <Row>
+                <Col>
+                  <Link to={"create/"}>
+                    <Button color="dark" className="mr-3">
+                      <FontAwesomeIcon /> Add
+                    </Button>
+                  </Link>
+                </Col>
+                <Col>
+                  <SearchBar {...props.searchProps} />
+                </Col>
+              </Row>
 
-            <hr />
-            <BootstrapTable
-              {...props.baseProps}
-              pagination={paginationFactory()}
-            />
-          </div>
-        )}
-      </ToolkitProvider>
+              <hr />
+              <BootstrapTable
+                {...props.baseProps}
+                pagination={paginationFactory()}
+              />
+            </div>
+          )}
+        </ToolkitProvider>
+      ) : null}
     </Container>
   );
 }

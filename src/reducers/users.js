@@ -1,25 +1,21 @@
+import { GET_USER_LIST } from "../actions/userAction"
+
 const initialState = {
-    users: [
-        {
-            id: 1,
-            nama: 'azim',
-            alamat: 'bandung',
-
-        },
-        {
-            id: 2,
-            nama: 'aa',
-            alamat: 'sumedang',
-
-        },
-
-    ],
+    users: false,
     error: false,
     title: 'redux-crud'
 }
 
 function users(state = initialState, action) {
-    return state
+    switch (action.type) {
+        case GET_USER_LIST:
+            return {
+                ...state,
+                users: action.payload.data
+            }
+        default:
+            return state
+    }
 }
 
 export default users

@@ -1,7 +1,6 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Navbar, NavDropdown, Nav, Container } from 'react-bootstrap'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeContainer from "./containers/HomeContainer";
 import JumbrotonComponent from "./components/JumbrotonComponent";
 import NavbarComponent from "./components/NavbarComponent";
@@ -17,6 +16,12 @@ export default class App extends React.Component {
           id: 1,
           nama: 'azim',
           alamat: 'bandung',
+
+        },
+        {
+          id: 2,
+          nama: 'aa',
+          alamat: 'sumedang',
 
         }
       ]
@@ -35,6 +40,7 @@ export default class App extends React.Component {
             <Route exact path='/create' element={< CreateUserContainer />}></Route>
             <Route exact path='/detail/:id' element={< DetailUserComponent />}></Route>
             <Route exact path='/edit/:id' element={< EditUserContainer />}></Route>
+
           </Routes>
         </div>
       </Router>

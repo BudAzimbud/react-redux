@@ -1,9 +1,15 @@
 import React from "react";
+// import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import BootstrapTable from "react-bootstrap-table-next";
 import { Container, Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import ToolkitProvider, {
+  Search,
+} from "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit";
+import paginationFactory from "react-bootstrap-table2-paginator";
+const { SearchBar } = Search;
 const columns = [
   {
     dataField: "id",
@@ -50,24 +56,29 @@ const columns = [
   },
 ];
 
-const defaultSorted = [
-  {
-    dataField: "id",
-    order: "asc",
-  },
-];
-
-const TableComponents = (props) => {
+function TableSearchComponents(props) {
   return (
     <Container>
-      <BootstrapTable
+      <ToolkitProvider
         keyField="id"
         data={props.users}
         columns={columns}
-        defaultSorted={defaultSorted}
-      />
+        search
+      >
+        {(props) => (
+          <div>
+            <h3>Input something at below input field:</h3>
+            <SearchBar {...props.searchProps} />
+            <hr />
+            <BootstrapTable
+              {...props.baseProps}
+              pagination={paginationFactory()}
+            />
+          </div>
+        )}
+      </ToolkitProvider>
     </Container>
   );
-};
+}
 
-export default TableComponents;
+export default TableSearchComponents;

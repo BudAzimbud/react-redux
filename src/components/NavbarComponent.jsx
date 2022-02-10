@@ -12,8 +12,9 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText,
+  Container,
 } from "reactstrap";
-
+import "./NavbarComponent.css";
 export default class NavbarComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -31,10 +32,10 @@ export default class NavbarComponent extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar color="dark" expand="md">
           <NavbarBrand href="/">REDUX-CRUD</NavbarBrand>
 
-          <NavbarToggler onClick={this.toggle} />
+          <NavbarToggler onClick={this.toggle} className="toggle-custom" />
 
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -54,10 +55,20 @@ export default class NavbarComponent extends React.Component {
                   <DropdownItem>WhatsApp</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
+
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Console
+                </DropdownToggle>
+
+                <DropdownMenu>
+                  <DropdownItem>Login</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>Register</DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
             </Nav>
           </Collapse>
-
-          <NavbarText>login</NavbarText>
         </Navbar>
       </div>
     );

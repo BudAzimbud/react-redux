@@ -5,7 +5,7 @@ import HomeContainer from "./containers/HomeContainer";
 import JumbrotonComponent from "./components/JumbrotonComponent";
 import NavbarComponent from "./components/NavbarComponent";
 import CreateUserContainer from "./containers/CreateUserContainer";
-import DetailUserComponent from "./containers/DetailContainer";
+import DetailUserContainer from "./containers/DetailContainer";
 import EditUserContainer from "./containers/EditUserContainer";
 export default class App extends React.Component {
   constructor(props) {
@@ -18,25 +18,17 @@ export default class App extends React.Component {
 
   render() {
     return (
-      // <div className="App">
-
       <BrowserRouter>
-
         <NavbarComponent />
         <JumbrotonComponent />
-
-        {/* <Routes>
-          
-          </Routes> */}
         <Routes>
-          <Route exact path={"/detailuser/:id"}  component={DetailUserComponent} />
+          <Route exact path={"/detailuser/:id"} component={DetailUserContainer } />
           <Route exact path='/' element={< HomeContainer />}></Route>
           <Route exact path='/create' element={< CreateUserContainer />}></Route>
-          <Route exact path='/detail/:id' element={< DetailUserComponent />}></Route>
+          <Route exact path='/detail/:id' element={< DetailUserContainer />}></Route>
           <Route exact path='/edit/:id' element={< EditUserContainer />}></Route>
         </Routes>
       </BrowserRouter>
-      // </div>
 
     );
   }

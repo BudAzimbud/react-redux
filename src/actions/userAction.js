@@ -4,7 +4,7 @@ export const GET_USER_LIST = 'GET_USER_LIST'
 export const GET_USER_DETAIL = 'GET_USER_DETAIL'
 export const POST_USER_CREATE = 'POST_USER_CREATE'
 export const POST_USER_EDIT = 'POST_USER_EDIT'
-
+export const DELETE_USER = 'DELETE_USER'
 
 export const getUserList = () => {
     return dispatch => {
@@ -58,7 +58,7 @@ export const getUserDetail = (id) => {
 
 
 
-export const deleteUser = (id) => {
+export const emptyUser = (id) => {
     return dispatch => {
         dispatch({
             type: GET_USER_DETAIL,
@@ -100,9 +100,21 @@ export const createUser = (data) => {
 
 
 
-export const editUser = (data ,id) => {
+export const editUser = (data, id) => {
     return dispatch => {
         axios.put('http://localhost:5000/users/' + id, data).then((res) => {
+                console.log(res)
+        }).catch((err) => {
+           console.log(err)
+        })
+    }
+}
+
+
+
+export const deleteUser = (id) => {
+    return dispatch => {
+        axios.delete('http://localhost:5000/users/' + id).then((res) => {
             dispatch({
                 type: POST_USER_EDIT,
                 payload: {

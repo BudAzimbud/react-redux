@@ -4,6 +4,13 @@ import ButtonBackComponent from '../components/ButtonBackComponent';
 import FormComponent from '../components/FormComponent';
 import { connect } from "react-redux";
 import { createUser } from '../actions/userAction';
+import swal from 'sweetalert';
+
+const mapStateToProps = (state) => {
+    return {
+        createUser: state.users.userCreate,
+    }
+}
 class CreateUserContainer extends Component {
 
     handleSubmit(data) {
@@ -11,6 +18,9 @@ class CreateUserContainer extends Component {
     }
 
     render() {
+        if (this.props.createUser) {
+            swal('youve been created')
+        }
         return (
             <div>
                 <ButtonBackComponent />
@@ -23,4 +33,4 @@ class CreateUserContainer extends Component {
     }
 }
 
-export default connect()(CreateUserContainer);
+export default connect(mapStateToProps, null)(CreateUserContainer);

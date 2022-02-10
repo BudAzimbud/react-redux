@@ -34,6 +34,15 @@ const renderField = ({
   </Row>
 );
 
+const mapStateProps = (state) => {
+  return {
+    initialValues: {
+      nama: state.users.userDetail.nama,
+      alamat: state.users.userDetail.alamat,
+    },
+  };
+};
+
 class FormComponent extends Component {
   render() {
     return (
@@ -81,4 +90,4 @@ FormComponent = reduxForm({
   validate: UserValidation,
   enableReinitialize: true,
 })(FormComponent);
-export default connect()(FormComponent);
+export default connect(mapStateProps, null)(FormComponent);

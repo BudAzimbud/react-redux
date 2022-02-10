@@ -8,7 +8,6 @@ import DetailComponent from '../components/DetailComponent';
 import ButtonBackComponent from '../components/ButtonBackComponent';
 
 
-
 function DetailUserContainer(props) {
 
     const { id } = useParams()
@@ -16,6 +15,8 @@ function DetailUserContainer(props) {
     useEffect(() => {
         props.dispatch(getUserDetail(id))
     });
+
+   
 
     return (
         < div >

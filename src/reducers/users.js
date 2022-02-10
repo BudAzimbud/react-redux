@@ -1,10 +1,12 @@
-import { GET_USER_LIST ,GET_USER_DETAIL } from "../actions/userAction"
+import { GET_USER_LIST, GET_USER_DETAIL, POST_USER_CREATE } from "../actions/userAction"
 
 const initialState = {
     users: false,
     error: false,
     userDetail: false,
     errorDetail: false,
+    userCreate: false,
+    errorUserCreate: false,
     title: 'redux-crud'
 }
 
@@ -19,6 +21,11 @@ function users(state = initialState, action) {
             return {
                 ...state,
                 userDetail: action.payload.data
+            }
+        case POST_USER_CREATE:
+            return {
+                ...state,
+                userCreate: action.payload.data
             }
         default:
             return state

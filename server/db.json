@@ -1,11 +1,44 @@
 {
-     "users": [
-        {
-            "id": 1,
-            "nama": "azim",
-            "alamat": "bandung"
-
-        }
-    ]
-      
+  "users": [
+    {
+      "id": 1,
+      "nama": "azim",
+      "alamat": "bandung"
+    },
+    {
+      "nama": "azim",
+      "alamat": "bandung",
+      "id": 2
+    },
+    {
+      "nama": "azim",
+      "alamat": "bandung",
+      "id": 3
+    },
+    {
+      "nama": "azim",
+      "alamat": "bandung",
+      "id": 4
+    },
+    {
+      "nama": "azim",
+      "alamat": "bandung",
+      "id": 5
+    },
+    {
+      "nama": "azim",
+      "alamat": "123",
+      "id": 6
+    },
+    {
+      "nama": "azim",
+      "alamat": "123",
+      "id": 7
+    },
+    {
+      "nama": "azim",
+      "alamat": "123",
+      "id": 8
+    }
+  ]
 }
